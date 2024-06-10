@@ -1,0 +1,7 @@
+# Ignore all
+*
+
+# Except
+!.gitignore
+!fair_api_example.py
+!fair_measures_api.py

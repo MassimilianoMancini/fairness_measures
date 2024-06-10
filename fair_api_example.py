@@ -1,5 +1,5 @@
 import pandas as pd
-from fair_api import fairness_measures_api
+import fairness_measures_api
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from xgboost import XGBClassifier
