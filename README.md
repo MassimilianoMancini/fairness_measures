@@ -4,7 +4,7 @@ The aim of this API is to give an accessible and practical way to calculate fair
 ## Usage
 `from fairness_measures_api import fairness_measures_api`
 
-`f = fairness_measures_api(d, 'r', 'y', 'y_hat', g0, g1)`
+`fairness_measures_api(d, 'r', 'y', 'y_hat', g0, g1)`
 
 where 
 - *d* is a panda dataset
