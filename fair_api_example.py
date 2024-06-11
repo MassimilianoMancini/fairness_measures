@@ -1,5 +1,5 @@
 import pandas as pd
-import fairness_measures_api
+from fairness_measures_api import fairness_measures_api
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from xgboost import XGBClassifier
@@ -48,11 +48,14 @@ def cal(file, subset, algorithm, g0, g1):
     print ("==============================================")
     print()
 
+algorithms = [XGBClassifier(), KNeighborsClassifier(), HistGradientBoostingClassifier()]
+files = ['student-mat.csv', 'student-por.csv']
+groups = [('sex_F', 'sex_M'), ('romantic_no', 'romantic_yes')]
+subsets = ['X_test', 'X_train']
 
-for algorithm in [XGBClassifier(), KNeighborsClassifier(), HistGradientBoostingClassifier()]:
-    for file in ['student-mat.csv', 'student-por.csv']:
-        for g in [('sex_F', 'sex_M'), ('romantic_no', 'romantic_yes')]:
-            for subset in ['X_test', 'X_train']:
-                g0 = g[0]
-                g1 = g[1]
-                cal(file, subset, algorithm, g0, g1)
+
+for f in files:
+    for (g0, g1) in groups:
+        for s in subsets:
+            for a in algorithms:
+                cal(f, s, a, g0, g1)

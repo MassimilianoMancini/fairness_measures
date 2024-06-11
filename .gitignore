@@ -5,3 +5,5 @@
 !.gitignore
 !fair_api_example.py
 !fair_measures_api.py
+!student-mat.csv
+!student-por.csv
