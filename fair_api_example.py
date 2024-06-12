@@ -48,11 +48,12 @@ def cal(file, subset, algorithm, g0, g1):
     print ("==============================================")
     print()
 
-algorithms = [XGBClassifier(), KNeighborsClassifier(), HistGradientBoostingClassifier()]
-files = ['student-mat.csv', 'student-por.csv']
-groups = [('sex_F', 'sex_M'), ('romantic_no', 'romantic_yes')]
-subsets = ['X_test', 'X_train']
 
+# Main
+files      = ['student-mat.csv', 'student-por.csv']
+groups     = [('sex_F', 'sex_M'), ('romantic_no', 'romantic_yes')]
+subsets    = ['X_test', 'X_train']
+algorithms = [XGBClassifier(), KNeighborsClassifier(), HistGradientBoostingClassifier()]
 
 for f in files:
     for (g0, g1) in groups:
