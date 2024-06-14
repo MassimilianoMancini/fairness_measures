@@ -49,7 +49,7 @@ class fairness_measures_api:
 
             w = len(subset)/len(self.d)
 
-            c += (g0 - g1) * w
+            c += w * (g0 - g1)
         return c
     
     def ofi(self, w_sp = 1/3, w_ta = 1/3, w_ca = 1/3):
