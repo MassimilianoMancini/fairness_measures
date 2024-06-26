@@ -30,7 +30,7 @@ def cal(file, subset, algorithm, g0, g1):
 
     d = eval(subset)
 
-    f = fairness_measures_api(d, 'r', 'y', 'y_hat', g0, g1)
+    f = fairness_measures_api(d, 'r', 10, 'y', 'y_hat', g0, g1)
     print ("==============================================")
     print (f'Algorithm is {model.__class__.__name__}')
     print (f'File is {file}')
@@ -54,6 +54,7 @@ files      = ['student-mat.csv', 'student-por.csv']
 groups     = [('sex_F', 'sex_M'), ('romantic_no', 'romantic_yes')]
 subsets    = ['X_test', 'X_train']
 algorithms = [XGBClassifier(), KNeighborsClassifier(), HistGradientBoostingClassifier()]
+
 
 for f in files:
     for (g0, g1) in groups:
