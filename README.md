@@ -4,13 +4,14 @@ The aim of this API is to give an accessible and practical way to calculate fair
 ## Usage
 `from fairness_measures_api import fairness_measures_api`
 
-`fairness_measures_api(d, 'r', 'y', 'y_hat', g0, g1)`
+`fairness_measures_api(self, d, r, t, y, h, g0, g1)`
 
 where 
 - *d* is a panda dataset
 - *r* is the name of the score variable
+- *t* is the value of the threshold for positive score
 - *y* is the name of the ground truth success variable
-- *y_hat* is the name of the predicted success variable
+- *h* is the name of the predicted success variable
 - *g0* is first group
 - *g1* is second group
 
@@ -20,3 +21,5 @@ methods are
 - total_accuracy
 - calibration
 - ofi
+
+all results range from -1 to 1
