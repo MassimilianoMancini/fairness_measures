@@ -7,7 +7,7 @@ The aim of this API is to give an accessible and practical way to calculate fair
 `fairness_measures_api(self, d, r, t, y, h, g0, g1)`
 
 where 
-- *d* is a panda dataset
+- *d* is a pandas dataset
 - *r* is the name of the score variable
 - *t* is the value of the threshold for positive score
 - *y* is the name of the ground truth success variable
@@ -23,3 +23,5 @@ methods are
 - ofi
 
 all results range from -1 to 1
+
+A usage example is provided: `fairness_api_example.py`
