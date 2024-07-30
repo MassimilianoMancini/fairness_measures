@@ -40,6 +40,7 @@ def cal(file, subset, algorithm, g0, g1):
     print ("==============================================")
 
     print (f'{'True statistical parity':.<30} {f.true_statistical_parity():>6,.3f}')
+    print (f'{'Model accuracy':.<30} {f.model_accuracy():>6,.3f}')
     print (f'{'Statistical parity':.<30} {f.statistical_parity():>6,.3f}')
     print (f'{'Total accuracy':.<30} {f.total_accuracy():>6,.3f}')
     print (f'{'Calibration':.<30} {f.calibration():>6,.3f}')

@@ -34,6 +34,15 @@ class fairness_measures_api:
         tn_g1 = len(self.d[self.d[self.g1] & ~self.d[self.y] & ~self.d[self.h]])
         return ((tp_g0 + tn_g0)/total_g0) - ((tp_g1 + tn_g1)/total_g1) 
     
+    def model_accuracy(self):
+        total_g0 = len(self.d[self.d[self.g0]])
+        total_g1 = len(self.d[self.d[self.g1]])
+        tp_g0 = len(self.d[self.d[self.g0] & self.d[self.y] & self.d[self.h]])
+        tp_g1 = len(self.d[self.d[self.g1] & self.d[self.y] & self.d[self.h]])
+        tn_g0 = len(self.d[self.d[self.g0] & ~self.d[self.y] & ~self.d[self.h]])
+        tn_g1 = len(self.d[self.d[self.g1] & ~self.d[self.y] & ~self.d[self.h]])
+        return (tp_g0 + tn_g0 + tp_g1 + tn_g1)/(total_g0 + total_g1) 
+    
     def calibration(self):
         c = 0
         t = 0
